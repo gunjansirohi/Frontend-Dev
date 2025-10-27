@@ -1,34 +1,87 @@
-header, footer {
-  background-color: #8e44ad;
-  color: white;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #8b0000;
+  color: #fff;
+  padding: 1.5em;
   text-align: center;
-  padding: 1em;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
 }
 
 nav a {
-  margin: 0 1em;
-  color: white;
+  color: #fff;
   text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
-section {
-  padding: 3em;
-  color: white;
+/* Main Sections */
+.section {
+  padding: 4em 2em;
+  margin: 2em 0;
+  border-top: 4px solid #ccc;
+  border-bottom: 4px solid #ccc;
 }
 
+/* History Section - Linear Gradient */
 .history {
-  background: url('fort.webp') center/cover fixed;
+  background: linear-gradient(to right, #fceabb, #f8b500);
 }
 
+/* Attractions Section - Radial Gradient */
+.attractions {
+  background: radial-gradient(circle, #d1c4e9, #7e57c2);
+  color: #fff;
+}
+
+/* Culture Section - Solid Background */
 .culture {
-  background: linear-gradient(to right, #e74c3c, #f39c12);
+  background-color: #e0f7fa;
 }
 
-.travel {
-  background: radial-gradient(circle, #3498db, #2c3e50);
-}
-
+/* Headings */
 h2 {
-  font-size: 2em;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Footer */
+footer {
+  background-color: #8b0000;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9rem;
 }
