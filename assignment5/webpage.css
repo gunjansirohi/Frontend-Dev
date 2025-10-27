@@ -47,18 +47,18 @@ nav a {
   border-bottom: 4px solid #ccc;
 }
 
-/* History Section - Linear Gradient */
+
 .history {
   background: linear-gradient(to right, #fceabb, #f8b500);
 }
 
-/* Attractions Section - Radial Gradient */
+
 .attractions {
   background: radial-gradient(circle, #d1c4e9, #7e57c2);
   color: #fff;
 }
 
-/* Culture Section - Solid Background */
+
 .culture {
   background-color: #e0f7fa;
 }
