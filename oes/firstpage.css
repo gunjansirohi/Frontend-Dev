@@ -1,0 +1,24 @@
+body{
+        background-color: #1C59A1;
+
+}
+.main1{
+    /* height: 479px; */
+    /* width: 100%; */
+    /* background-color: #1C59A1; */
+    border:-solid black;
+    text-align: center;
+    padding-top: 90px;
+}
+.btn1{
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    margin:20px;
+    padding:9px;
+    padding-left:30px;
+    padding-right:30px;
+}
+h2{
+    color: white;
+}
