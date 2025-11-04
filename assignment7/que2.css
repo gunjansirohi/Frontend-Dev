@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #222;
+  color: white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.box-container {
+  display: flex;
+  gap: 1em;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: auto;
+}
+
+.box1 {
+  width: 200px;
+  height: 100px;
+  background-color: #007BFF;
+}
+
+.box2 {
+  width: 30%;
+  height: 20vh;
+  background-color: #28A745;
+  min-height: 80px;
+  max-width: 300px;
+}
+
+.box3 {
+  width: 10em;
+  height: 10em;
+  background-color: #FFC107;
+}
