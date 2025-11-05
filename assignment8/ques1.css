@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.example {
+  flex: 1 1 200px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Pseudo-class styles */
+.pseudo-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.pseudo-link:hover {
+  background-color: #ffcc00;
+}
+
+.pseudo-button {
+  padding: 0.5rem 1rem;
+  border: 2px solid #007BFF;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.pseudo-button:focus {
+  outline: none;
+  background-color: #cce5ff;
+}
+
+.pseudo-active {
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  border: 2px solid #28a745;
+  border-radius: 4px;
+}
+
+.pseudo-active:active {
+  background-color: #28a745;
+  color: white;
+}
+
+.pseudo-list li {
+  padding: 0.3rem;
+}
+
+.pseudo-list li:nth-child(odd) {
+  background-color: #f0f0f0;
+}
