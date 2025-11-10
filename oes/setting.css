@@ -71,3 +71,10 @@ margin-bottom: 30px;
 #about{
      text-decoration:underline 5px #1C59A1;
 }
+
+.pho{
+    display: flex;
+}
+.src{
+    margin-top: 180px;
+}

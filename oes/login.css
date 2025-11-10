@@ -15,6 +15,9 @@ body{
 
     
 }
+.log{
+    text-shadow: 2px 2px lightblue;
+}
 .form2{
     margin-left:19px;
 }
@@ -36,9 +39,10 @@ body{
     background-color:#1C59A1;
     color:white;
     border-radius:10px;
-    padding:2px;
-    padding-left: 21px;
-    padding-right:21px;
+    border:none;
+    padding:3px;
+    padding-left: 26px;
+    padding-right:26px;
     margin-left: 23px;
 }
 .main4{

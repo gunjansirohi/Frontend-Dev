@@ -72,3 +72,27 @@ margin-bottom: 30px;
 #about{
      text-decoration:underline 5px #1C59A1;
 }
+.q1{
+    display: flex;
+   
+}
+.contain{
+    position:relative;
+
+}
+.img3{
+      object-fit: cover;
+      margin-top:190px;
+      
+}
+.img2{
+   position: absolute;
+   top:175px;
+   left:170px;
+   opacity: 0.8; 
+}
+.img1{
+     position: absolute;
+     top:390px;
+     left:35px;
+}

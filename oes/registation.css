@@ -1,6 +1,11 @@
 body{
     background-color: #1C59A1;
 }
+.reg{
+    margin-top: 20px;
+    padding-top:20px;
+    text-shadow:3px 2px lightblue;
+}
 
 .main1{height: 450px;
     width: 75%;
@@ -40,9 +45,10 @@ h3{
     background-color:#1C59A1;
     color:white;
     border-radius:10px;
-    padding:2px;
-    padding-left: 21px;
-    padding-right:21px;
+    border:none;
+    padding:4px;
+    padding-left: 26px;
+    padding-right:26px;
     margin-left: 23px;
 }
 .main4{
