@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form Validator</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input.valid {
+            border: 2px solid green;
+        }
+
+        input.invalid {
+            border: 2px solid red;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Student Form</h1>
+    <form id="studentForm" novalidate>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error" id="nameError">Must Contain only Alphabets</div>
+        <br><br>
+        <label for="phone">Phone</label>
+        <input type="number" id="phone" name="phone" required>
+        <div class="error" id="phoneError">Phone Must Exactly be 10 digits.</div>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error" id="emailError">Email formate should be (abc@example.com)</div>
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <div class="error" id="passwordError">Password must contain (Upperletter,Lower Letter, number).</div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const form = document.getElementById("studentForm");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name");
+            const phone = document.getElementById("phone");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+
+            const validname = /^[A-Za-z\s]+$/.test(name.value);
+            const validphone = /^\d{10}$/.test(phone.value);
+            const validemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value);
+            const passwordValid = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/.test(password.value);
+
+            validateField(name, validname, "nameError");
+            validateField(phone, validphone, "phoneError");
+            validateField(email, validemail, "emailError");
+            validateField(password, passwordValid, "passwordError");
+
+            if (validname && validphone && validemail) {
+                alert("Form Submitted Successfully!");
+                form.reset();
+                document.querySelectorAll("input").forEach(input => {
+                    input.classList.remove("valid");
+                });
+            }
+        });
+        function validateField(field, isValid, errorId) {
+            const error = document.getElementById(errorId);
+            if (isValid) {
+                field.classList.add("valid");
+                field.classList.remove("invalid");
+                error.classList.remove("show");
+            } else {
+                field.classList.add("invalid");
+                field.classList.remove("valid");
+                error.classList.add("show");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
