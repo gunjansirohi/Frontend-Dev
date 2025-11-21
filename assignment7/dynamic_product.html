@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Product List Manager</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    #input {
+        padding: 8px;
+        width: 200px;
+    }
+
+    #addBtn {
+        padding: 8px 12px;
+        margin-left: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    li {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .name {
+        flex-grow: 1;
+    }
+    .edit{
+        background-color: orange;
+        color: white;
+        border: none;
+    }
+    .delete{
+        background-color: red;
+        color: white;
+        border: none;
+    }
+    .edit,
+    .delete {
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+
+    .editInput {
+        flex-grow: 1;
+        padding: 5px;
+    }
+</style>
+
+<body>
+
+    <h1>Product List Manager</h1>
+
+    <input type="text" id="input" placeholder="Enter product name">
+    <button id="addBtn">Add Product</button>
+
+    <ul id="list">
+    </ul>
+
+    <script>
+        const input = document.getElementById('input');
+        const addBtn = document.getElementById('addBtn');
+        const list = document.getElementById('list');
+
+        addBtn.addEventListener('click', () => {
+            const name = input.value.trim();
+            if (name) {
+                const li = document.createElement('li');
+                li.innerHTML = `
+          <span class="name">${name}</span>
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
+        `;
+                list.appendChild(li);
+                input.value = '';
+            }
+        });
+        list.addEventListener('click', (e) => {
+            const li = e.target.closest('li');
+            if (!li) return;
+
+            const span = li.querySelector('.name');
+
+            if (e.target.classList.contains('delete')) {
+                li.remove();
+            }
+
+            if (e.target.classList.contains('edit')) {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.value = span.textContent;
+                input.className = 'editInput';
+                li.replaceChild(input, span);
+                input.focus();
+
+                input.addEventListener('blur', () => {
+                    const newSpan = document.createElement('span');
+                    newSpan.className = 'name';
+                    newSpan.textContent = input.value.trim() || 'Unnamed Product';
+                    li.replaceChild(newSpan, input);
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
