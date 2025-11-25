@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Special Offer Banners</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin: 30px;
+        }
+
+        .banner {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            font-size: 22px;
+            color: white;
+            border-radius: 10px;
+            display: block;
+        }
+
+        #banner1 { background: #e74c3c; }
+        #banner2 { background: #3498db; }
+        #banner3 { background: #27ae60; }
+
+        button {
+            margin: 10px;
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Special Offer Banners</h2>
+
+    <div id="banner1" class="banner">🔥 50% OFF on all Electronics!</div>
+    <div id="banner2" class="banner">🎁 Buy 1 Get 1 Free on Fashion Wear!</div>
+    <div id="banner3" class="banner">🚀 Free Delivery on Orders Above ₹499!</div>
+
+    <br>
+
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="slideBtn">Slide Up/Down</button>
+    <button id="fadeBtn">Fade In/Out</button>
+
+    <script>
+        // 1️⃣ Hide banners
+        $("#hideBtn").click(function () {
+            $(".banner").hide();
+        });
+
+        // 2️⃣ Show banners
+        $("#showBtn").click(function () {
+            $(".banner").show();
+        });
+
+        // 3️⃣ Slide up/down toggle
+        $("#slideBtn").click(function () {
+            $(".banner").slideToggle(500);
+        });
+
+        // 4️⃣ Fade in/out toggle
+        $("#fadeBtn").click(function () {
+            $(".banner").fadeToggle(500);
+        });
+
+      
+        let currentBanner = 0;
+        const banners = $(".banner");
+
+        function rotateBanners() {
+            
+            $(banners[currentBanner]).fadeOut(600, function () {
+
+           
+                currentBanner = (currentBanner + 1) % banners.length;
+
+            
+                $(banners[currentBanner]).fadeIn(600);
+            });
+        }
+
+  
+        setInterval(rotateBanners, 5000);
+    </script>
+
+</body>
+</html>

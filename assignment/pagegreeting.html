@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page Greeting</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 60px;
+        }
+        #welcomeMessage {
+            margin-top: 20px;
+            font-size: 20px;
+            color: teal;
+        }
+        #greeting {
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="greeting"></h1>
+
+    <button id="changeBtn">Change Greeting</button>
+    <button id="toggleBtn">Toggle Welcome Message</button>
+
+    <p id="welcomeMessage">Welcome to our website! Enjoy browsing.</p>
+
+    <script>
+        // 1️⃣ Time-based greeting on page load
+        function setGreeting() {
+            const greeting = document.getElementById("greeting");
+            const hour = new Date().getHours();
+
+            if (hour < 12) {
+                greeting.textContent = "Good Morning!";
+            } else if (hour < 18) {
+                greeting.textContent = "Good Afternoon!";
+            } else {
+                greeting.textContent = "Good Evening!";
+            }
+        }
+        setGreeting();
+
+        // 2️⃣ Change Greeting button → motivational quote
+        document.getElementById("changeBtn").onclick = function() {
+            document.getElementById("greeting").textContent =
+                "Believe in yourself — you can achieve anything!";
+        };
+
+        // 3️⃣ Toggle Welcome Message visibility
+        document.getElementById("toggleBtn").onclick = function() {
+            const msg = document.getElementById("welcomeMessage");
+            msg.style.display = (msg.style.display === "none") ? "block" : "none";
+        };
+
+        // 4️⃣ Click greeting → alert
+        document.getElementById("greeting").onclick = function() {
+            alert("You clicked the greeting!");
+        };
+    </script>
+
+</body>
+</html>

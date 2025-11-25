@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive FAQ</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .question:hover {
+            color: teal;                
+        }
+
+        .answer {
+            display: none;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        .highlight {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Interactive FAQ</h2>
+
+    
+    <div class="faq-item">
+        <div class="question">What is HTML?</div>
+        <div class="answer">
+            HTML stands for HyperText Markup Language.
+            <br><br>
+            <input type="text" placeholder="Type here...">
+        </div>
+    </div>
+
+  
+    <div class="faq-item">
+        <div class="question">What is CSS?</div>
+        <div class="answer">
+            CSS stands for Cascading Style Sheets.
+            <br><br>
+            <input type="text" placeholder="Type here...">
+        </div>
+    </div>
+
+  
+    <div class="faq-item">
+        <div class="question">What is JavaScript?</div>
+        <div class="answer">
+            JavaScript adds interactivity to websites.
+            <br><br>
+            <input type="text" placeholder="Type here...">
+        </div>
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll(".question");
+        const answers = document.querySelectorAll(".answer");
+
+        questions.forEach((question, index) => {
+
+            question.addEventListener("click", function () {
+                const answer = this.nextElementSibling;
+                answer.style.display =
+                    answer.style.display === "block" ? "none" : "block";
+            });
+
+         
+            question.addEventListener("dblclick", function () {
+                answers.forEach(ans => ans.style.display = "none");
+            });
+
+          
+            const input = answers[index].querySelector("input");
+            input.addEventListener("focus", function () {
+                question.classList.add("highlight");
+            });
+
+           
+            input.addEventListener("blur", function () {
+                question.classList.remove("highlight");
+            });
+        });
+    </script>
+
+</body>
+</html>
